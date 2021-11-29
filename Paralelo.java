@@ -7,8 +7,8 @@ public class Paralelo {
 	private int numero;
 	private int total;
 	private Asignatura itemA;
-	private Paralelos itemB;
-	private ArrayList<Paralelos> itemC;
+	private Paralelos itemB;//profesor del paralelo
+	private ArrayList<Paralelos> itemC;//estudiantes del paralelo
 	private Paralelo next;
 	
 	public Paralelo(Asignatura itemA, Paralelos itemB, int numero) {
@@ -16,12 +16,17 @@ public class Paralelo {
 		this.itemB=itemB;
 		this.numero =numero;
 		this.total=0;
-		//this.itemC=itemC;
+		this.itemC= new ArrayList<Paralelos>();
 		this.next=null;
 	}
 	
 	public boolean addStudent (Paralelos itemC) {
-		return true;
+		if(this.total<100) {
+			this.itemC.add(itemC);
+			this.total++;
+			return true;
+		}
+		return false;
 	}
 	
 	public boolean setNext(Paralelo next) {
@@ -45,7 +50,18 @@ public class Paralelo {
 		return this.next;
 	}
 	
+	public int getNumero() {
+		return this.numero;
+	}
+	
 	public boolean removeStudent (String rut) {
-		return true;
+		for(int i=0; i<this.total;i++) {
+			if(this.itemC.get(i).getItemB().getRut().equals(rut)) {
+				this.itemC.remove(i);
+				this.total--;
+				return true;
+			}
+		}
+		return false;
 	}
 }
