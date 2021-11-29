@@ -5,28 +5,27 @@ public class AsignaturaL extends Asignatura{
 	public AsignaturaL(String code, String name, int credit, int lvl) {
 		super(code,name,credit,lvl);
 	}
-	@Override
+	
 	public boolean addCoruse(Asignatura course) {
-		// TODO Auto-generated method stub
+		//Las asignaturas libres no tienen prerequisitos
 		return false;
 	}
 
-	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
-		return null;
+		return "opcional";
 	}
 
-	@Override
-	public Paralelo getParalel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Asignaturas getPrerequisits() {
-		// TODO Auto-generated method stub
+		//Las asignaturas libres no tienen prerequisitos
 		return null;
+	}
+
+	public boolean addParalel(Paralelos paralel) {
+		if(this.paralel==null) {
+			this.paralel= new Paralelo(this, paralel, 1);
+			return true;
+		}
+		return false;
 	}
 
 }
