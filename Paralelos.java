@@ -1,7 +1,5 @@
 package Taller2;
 
-import java.util.ArrayList;
-
 public class Paralelos {
 	private Paralelo itemA;
 	private Usuario itemB;
@@ -12,7 +10,6 @@ public class Paralelos {
 		this.itemA=itemA;
 		this.itemB=itemB;
 		this.nota=0;
-		//this.itemC=itemC;
 		this.next=null;
 	}
 	
