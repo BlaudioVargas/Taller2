@@ -14,6 +14,7 @@ public abstract class Usuario {
 	}
 	
 	abstract public boolean addParalel(Paralelos paralel);
+	abstract public boolean removeParalel(String code);
 	
 	public String getRut(){return this.rut;}
 	public String getEmail(){return this.email;}
