@@ -36,4 +36,9 @@ public class Profesor  extends Usuario{
 		}
 		return true;
 	}
+	
+	public boolean removeParalel(String code) {
+		//no tiene uso en esta clase
+		return false;
+	}
 }
