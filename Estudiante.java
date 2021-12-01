@@ -36,5 +36,25 @@ public class Estudiante extends Usuario{
 		}
 		return true;
 	}
+	
+	public boolean removeParalel(String code) {
+		if(paralel.getItemA().getItemA().getCode().equals(code)) {
+			this.paralel=paralel.getNext();
+			return true;
+		}
+		else {
+			Paralelos indice = paralel;
+			while(indice!=null) {
+				if(indice.getNext()!=null) {
+					if(indice.getNext().getItemA().getItemA().getCode().equals(code)) {
+						indice.setNext(indice.getNext().getNext());
+						return true;
+					}
+				}
+				indice=indice.getNext();
+			}
+		}
+		return false;
+	}
 
 }
