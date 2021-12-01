@@ -30,21 +30,18 @@ public class AsignaturaO extends Asignatura{
 		return this.prer;
 	}
 	
-	public boolean addParalel(Paralelos paralel) {
-		int contador =1;
+	public boolean addParalel(Paralelos paralel, int numero) {
 		if(this.paralel==null) {
-			this.paralel= new Paralelo(this, paralel, contador);
+			this.paralel= new Paralelo(this, paralel, numero);
 		}
 		else {
 			Paralelo indice = this.paralel;
-			contador++;
 			while(indice.getNext()!=null) {
 				indice=indice.getNext();
-				contador++;
 			}
-			indice.setNext(new Paralelo(this, paralel, contador));
+			indice.setNext(new Paralelo(this, paralel, numero));
 		}
-		return false;
+		return true;
 	}
 
 }
