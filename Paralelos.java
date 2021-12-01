@@ -4,13 +4,18 @@ public class Paralelos {
 	private Paralelo itemA;
 	private Usuario itemB;
 	private Paralelos next;
-	private int nota;
+	private float nota;
 	
 	public Paralelos(Paralelo itemA, Usuario itemB) {
 		this.itemA=itemA;
 		this.itemB=itemB;
 		this.nota=0;
 		this.next=null;
+	}
+	
+	public boolean setParalelo(Paralelo itemA) {
+		this.itemA=itemA;
+		return true;
 	}
 	
 	public boolean setNota(int nota) {
@@ -31,7 +36,7 @@ public class Paralelos {
 		return this.itemB;
 	}
 	
-	public int getNota() {
+	public float getNota() {
 		return this.nota;
 	}
 	
