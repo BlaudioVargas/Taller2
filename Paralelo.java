@@ -17,12 +17,14 @@ public class Paralelo {
 		this.numero =numero;
 		this.total=0;
 		this.itemC= new ArrayList<Paralelos>();
+		itemB.setParalelo(this);
 		this.next=null;
 	}
 	
 	public boolean addStudent (Paralelos itemC) {
 		if(this.total<100) {
 			this.itemC.add(itemC);
+			itemC.setParalelo(this);
 			this.total++;
 			return true;
 		}
