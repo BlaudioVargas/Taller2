@@ -1,0 +1,5 @@
+1285,termodinámica,8,obligatoria,2,3,1284,1085,9450
+1286,belga,4,opcional,14
+1284,termodinámicaA,8,obligatoria,2,0
+1085,termodinámicaB,8,obligatoria,2,0
+9450,termodinámicaC,8,obligatoria,2,0
