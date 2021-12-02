@@ -1,5 +1,11 @@
 package Taller2;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
+
 public class Sistema implements SistemaIMPL{
 
 	private Usuarios users;
@@ -163,6 +169,9 @@ public class Sistema implements SistemaIMPL{
 	
 	private boolean aproveAll(Estudiante student) {
 		Paralelos indice = student.getParalel();
+		if(indice==null) {
+			return false;
+		}
 		while(indice!=null) {
 			if(indice.getNota()<3.95) {
 				return false;
