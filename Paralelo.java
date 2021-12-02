@@ -52,6 +52,10 @@ public class Paralelo {
 		return this.next;
 	}
 	
+	public int getTotal() {
+		return this.numero;
+	}
+	
 	public int getNumero() {
 		return this.numero;
 	}
