@@ -27,7 +27,8 @@ public class Estudiante extends Usuario{
 				total += indice.getItemA().getItemA().getCredit();
 				indice=indice.getNext();
 			}
-			if((total+paralel.getItemA().getItemA().getCredit())<40) {
+			int nuevoTotal= total+indice.getItemA().getItemA().getCredit();
+			if(nuevoTotal<40) {
 				indice.setNext(paralel);
 			}
 			else {
@@ -36,7 +37,7 @@ public class Estudiante extends Usuario{
 		}
 		return true;
 	}
-	
+
 	public boolean removeParalel(String code) {
 		if(paralel.getItemA().getItemA().getCode().equals(code)) {
 			this.paralel=paralel.getNext();
