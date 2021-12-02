@@ -1,5 +1,6 @@
 package Taller2;
 
+
 public class Paralelos {
 	private Paralelo itemA;
 	private Usuario itemB;
@@ -18,7 +19,7 @@ public class Paralelos {
 		return true;
 	}
 	
-	public boolean setNota(int nota) {
+	public boolean setNota(float nota) {
 		this.nota=nota;
 		return true;
 	}
