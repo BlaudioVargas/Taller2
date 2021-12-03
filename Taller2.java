@@ -30,7 +30,16 @@ public class Taller2 {
 	}
 	
 	/*	esta parte ordena la fecha y redirecciona al usuario dependiendo de la fecha (no se  en que parte del inicio de sesion deberia ponerlo xd)
-
+			var nc= new Scanner(System.in);
+		System.out.println("INICIO DE SECION");
+		System.out.println("Indique su correo");
+		System.out.println("Se finaliza con 0:");
+		String seleccion = nc.nextLine();
+				
+		if((seleccion).equals("0")){
+			System.out.println("Se a finalizado la operacion");
+				
+		}
 		var sc= new Scanner(System.in);
 		System.out.println("indique la fecha actual");
 		String fechahoy = sc.nextLine();
