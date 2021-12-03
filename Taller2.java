@@ -29,6 +29,183 @@ public class Taller2 {
 		}
 	}
 	
+	/*	esta parte ordena la fecha y redirecciona al usuario dependiendo de la fecha (no se  en que parte del inicio de sesion deberia ponerlo xd)
+
+		var sc= new Scanner(System.in);
+		System.out.println("indique la fecha actual");
+		String fechahoy = sc.nextLine();
+		
+		// 20-02-2021
+		String anho = fechahoy.substring(6, 10);
+		String mes = fechahoy.substring(3, 5);
+		String dia = fechahoy.substring(0, 2);
+		String nFechaHoy = anho+"-"+mes+"-"+dia;
+		//System.out.println(nFechaHoy); 
+		int result = funcionalidad(nFechaHoy);
+		if (result==1) {
+			//System.out.println("inicio de semestre");
+			menuInicioSem();
+		}
+		if (result==2) {
+			//System.out.println("mitad de semestre");
+			menuMitadSem();
+		}
+		if (result==3) {
+			//System.out.println("final de semestre");
+			menuFinalSem();
+		}
+		if (result==4) {
+			//System.out.println("cierre de semestre");
+			menucloseSemester();
+		}
+		if (result==0) {
+			System.out.println("Disfrute sus vacaciones");
+		}
+		*/
+	
+	public static int funcionalidad(String fecha){ //establece los limites de las fechas de sus respectivos menus
+		 LocalDate fechaHoy = LocalDate.parse(fecha); 
+		
+		
+	    //inicio de semestre
+		
+	    LocalDate start = LocalDate.parse("2021-03-10"),
+	      end   = LocalDate.parse("2021-05-02");
+	
+	    // Busqueda de la fecha
+	    LocalDate next = start.minusDays(1);
+	    while ((next = next.plusDays(1)).isBefore(end.plusDays(1))) {
+	        if (fechaHoy.equals(	next)) {
+	        	return 1;
+	        }
+	    }
+	    //mitad de semestre
+		
+	     start = LocalDate.parse("2021-05-03");
+	     end   = LocalDate.parse("2021-07-11");
+	
+	    // Busqueda de la fecha
+	    next = start.minusDays(1);
+	    while ((next = next.plusDays(1)).isBefore(end.plusDays(1))) {
+	        if (fechaHoy.equals(next)) {
+	        	return 2;
+	        }
+	    }
+	    //final de semestre
+		
+	     start = LocalDate.parse("2021-07-12");
+	     end   = LocalDate.parse("2021-07-25");
+	
+	    // Busqueda de la fecha
+	    next = start.minusDays(1);
+	    while ((next = next.plusDays(1)).isBefore(end.plusDays(1))) {
+	        if (fechaHoy.equals(next)) {
+	        	return 3;
+	        }
+	    }
+	    //cierre de semestre
+		
+	     start = LocalDate.parse("2021-07-26");
+	     end   = LocalDate.parse("2021-07-26");
+	
+	    // Busqueda de la fecha
+	    next = start.minusDays(1);
+	    while ((next = next.plusDays(1)).isBefore(end.plusDays(1))) {
+	        if (fechaHoy.equals(next)) {
+	        	return 4;
+	        }
+	    }
+	    return 0;
+	}
+	
+	private static void menuInicioSem() {
+		@SuppressWarnings("resource")
+		var sc= new Scanner(System.in);
+		System.out.println("---Menú inicio de semestre---");
+		System.out.println("1) inscripcion de asignaturas");
+		System.out.println("1) eliminacion de asignaturas");
+		System.out.println("0)Salir");
+		String respuesta = sc.nextLine();
+		
+		if(respuesta.equals("1")) {
+			
+		}
+		else if(respuesta.equals("2")) {
+			
+		}
+		else if(respuesta.equals("0")) {
+			//valido = false;
+			System.out.println("Saliendo de menú inicio de semestre");
+		}
+		else {
+			System.out.println("ERROR RESPUESTA NO VALIDA");
+		}
+	}
+	
+	private static void menuMitadSem() {
+		@SuppressWarnings("resource")
+		var sc= new Scanner(System.in);
+		System.out.println("---Menú mitad de semestre---");
+		System.out.println("1) eliminar asignaturas");
+		System.out.println("0)Salir");
+		String respuesta = sc.nextLine();
+		
+		if(respuesta.equals("1")) {
+			
+		}
+		
+		else if(respuesta.equals("0")) {
+			//valido = false;
+			System.out.println("Saliendo de menú mitad de semestre");
+		}
+		else {
+			System.out.println("ERROR RESPUESTA NO VALIDA");
+		}
+	}
+	
+	private static void menuFinalSem() {
+		@SuppressWarnings("resource")
+		var sc= new Scanner(System.in);
+		System.out.println("---Menú final de semestre---");
+		System.out.println("1) ingreso de nota final ");
+		System.out.println("0)Salir");
+		String respuesta = sc.nextLine();
+		
+		if(respuesta.equals("1")) {
+			
+		}
+		
+		else if(respuesta.equals("0")) {
+			//valido = false;
+			System.out.println("Saliendo de menú final de semestre");
+		}
+		else {
+			System.out.println("ERROR RESPUESTA NO VALIDA");
+		}
+	}
+	
+	private static void menucloseSemester() {
+		@SuppressWarnings("resource")
+		var sc= new Scanner(System.in);
+		System.out.println("---Menú cierre de semestre---");
+		System.out.println("1) cierre de semestre ");
+		System.out.println("0)Salir");
+		String respuesta = sc.nextLine();
+		
+		if(respuesta.equals("1")) {
+			system.closeSemester();
+		}
+		
+		else if(respuesta.equals("0")) {
+			//valido = false;
+			System.out.println("Saliendo de menú cierre de semestre");
+		}
+		else {
+			System.out.println("ERROR RESPUESTA NO VALIDA");
+		}
+	}
+	
+	
 	private static boolean cargarAsignaturas(SistemaIMPL system) {
 		try {
 			File archivo = new File ("src/Taller2/asignaturas.txt"); 
